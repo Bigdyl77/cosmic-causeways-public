@@ -15,7 +15,7 @@ On a phone, open that link, then use **Add to Home Screen** (iPhone) or **Instal
 - Browser (unzip, open the folder, then open `index.html`): https://github.com/Bigdyl77/cosmic-causeways-public/archive/refs/heads/main.zip
 - Windows: [latest Windows downloads](https://github.com/Bigdyl77/cosmic-causeways-public/releases/latest). Choose the Setup installer for built-in updates, or the portable edition for manual updates.
 
-Version 1.4.3 includes shared world records. Saves stay on your device when you replace the game files.
+Version 1.4.4 includes shared world records. Saves stay on your device when you replace the game files.
 
 ## Windows updates
 
