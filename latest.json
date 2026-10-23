@@ -1,13 +1,13 @@
 {
-  "version": "1.5.3",
-  "released": "2026-10-23T18:33:36.064Z",
+  "version": "1.5.4",
+  "released": "2026-10-23T18:56:52.462Z",
   "notes": "World records in this build use the shared server. This link stays the same for every later update.",
-  "sha256": "c385b0529086bc754caffb3b5d562b6b7d139df8485b2682aec91c44f793b91e",
+  "sha256": "c6c7de499c1651d8a8f983c9f9e68e7fe21ca913557d489f5bfd8eb355b84e7c",
   "page": "https://github.com/Bigdyl77/cosmic-causeways-public",
   "play": "https://bigdyl77.github.io/cosmic-causeways-public/",
   "downloads": {
     "browser": "https://github.com/Bigdyl77/cosmic-causeways-public/archive/refs/heads/main.zip",
     "windows": "https://github.com/Bigdyl77/cosmic-causeways-public/releases/latest",
-    "windowsInstaller": "https://github.com/Bigdyl77/cosmic-causeways-public/releases/download/v1.5.3/CosmicCauseways-Setup-1.5.3.exe"
+    "windowsInstaller": "https://github.com/Bigdyl77/cosmic-causeways-public/releases/download/v1.5.4/CosmicCauseways-Setup-1.5.4.exe"
   }
 }
