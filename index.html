@@ -207,6 +207,8 @@ table.waves td small{color:var(--muted)}
 .lcard.on{border-color:#ffd23d;background:rgba(255,210,61,.14);box-shadow:0 0 0 3px rgba(255,210,61,.18)}
 .lcard.locked{opacity:.5;cursor:default}
 .lcard:not(.locked):hover{transform:translateY(-1px);border-color:rgba(255,255,255,.35)}
+.lslot>summary .hint,#pTal>summary .hint,#pMile>summary .hint{color:var(--gold);font:700 13px var(--body);text-align:right}
+#lSec{margin:2px 0 8px}#lGear,#lPowers{display:grid;gap:8px}
 .loadrow{margin-top:8px}
 #mseg button.claimed::after{content:' ✓';color:#7be0a0}
 .brand.wig{animation:tipPop .25s}
@@ -341,6 +343,7 @@ details.acc>summary::-webkit-details-marker{display:none}
 details.acc>summary::after{content:'+';color:var(--muted);font-size:18px}
 details.acc[open]>summary::after{content:'−'}
 .accb{padding:0 12px 12px;display:grid;gap:8px}
+details.acc:not([open]) > :not(summary){display:none}
 .optrow{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;font-size:14px}
 .keys{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:4px 12px;max-height:300px;overflow:auto}
 .krow{display:flex;justify-content:space-between;align-items:center;gap:6px;font-size:13px}
