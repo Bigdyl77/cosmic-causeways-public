@@ -1,0 +1,19 @@
+{
+  "name": "Cosmic Causeways",
+  "short_name": "Causeways",
+  "description": "Space tower defense: build towers, mix elements, lead the fight as the Commander.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "any",
+  "background_color": "#16132b",
+  "theme_color": "#16132b",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
