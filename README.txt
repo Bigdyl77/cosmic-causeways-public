@@ -1,4 +1,4 @@
-COSMIC CAUSEWAYS 1.5.5 (web / mobile web app)
+COSMIC CAUSEWAYS 1.5.6 (web / mobile web app)
 
 Upload this whole folder to any web host: itch.io (as an HTML game, zipped), GitHub Pages, Netlify or similar.
 On phones, open the link, then:
