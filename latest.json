@@ -6,6 +6,8 @@
   "page": "https://github.com/Bigdyl77/cosmic-causeways-public",
   "play": "https://bigdyl77.github.io/cosmic-causeways-public/",
   "downloads": {
-    "browser": "https://github.com/Bigdyl77/cosmic-causeways-public/archive/refs/heads/main.zip"
+    "browser": "https://github.com/Bigdyl77/cosmic-causeways-public/archive/refs/heads/main.zip",
+    "windows": "https://github.com/Bigdyl77/cosmic-causeways-public/releases/latest",
+    "windowsInstaller": "https://github.com/Bigdyl77/cosmic-causeways-public/releases/download/v1.4.3/CosmicCauseways-Setup-1.4.3.exe"
   }
 }

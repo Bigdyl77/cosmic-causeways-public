@@ -13,6 +13,10 @@ On a phone, open that link, then use **Add to Home Screen** (iPhone) or **Instal
 ## Download
 
 - Browser (unzip, open the folder, then open `index.html`): https://github.com/Bigdyl77/cosmic-causeways-public/archive/refs/heads/main.zip
-- Windows: the same page will list `CosmicCauseways-Windows.zip` when a Windows build is published. The address stays here.
+- Windows: [latest Windows downloads](https://github.com/Bigdyl77/cosmic-causeways-public/releases/latest). Choose the Setup installer for built-in updates, or the portable edition for manual updates.
 
 Version 1.4.3 includes shared world records. Saves stay on your device when you replace the game files.
+
+## Windows updates
+
+[Download the latest Windows release](https://github.com/Bigdyl77/cosmic-causeways-public/releases/latest). Choose the Setup installer once to receive future update prompts inside the game. Press Alt, then Help → Check for updates. Save your run before restarting. The portable edition requires manual downloads.
