@@ -13,9 +13,9 @@ On a phone, open that link, then use **Add to Home Screen** (iPhone) or **Instal
 ## Download
 
 - Browser (unzip, open the folder, then open `index.html`): https://github.com/Bigdyl77/cosmic-causeways-public/archive/refs/heads/main.zip
-- Windows: [download the Setup installer](https://github.com/Bigdyl77/cosmic-causeways-public/releases/download/v2.3.0/CosmicCauseways-Setup-2.3.0.exe) (updates itself). Other downloads, including the portable edition that needs manual updates, are on the [releases page](https://github.com/Bigdyl77/cosmic-causeways-public/releases/latest).
+- Windows: [download the Setup installer](https://github.com/Bigdyl77/cosmic-causeways-public/releases/download/v2.4.0/CosmicCauseways-Setup-2.4.0.exe) (updates itself). Other downloads, including the portable edition that needs manual updates, are on the [releases page](https://github.com/Bigdyl77/cosmic-causeways-public/releases/latest).
 
-Version 2.3.0 includes shared world records. Saves stay on your device when you replace the game files.
+Version 2.4.0 includes shared world records. Saves stay on your device when you replace the game files.
 
 ## Windows updates
 
