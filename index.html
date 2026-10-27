@@ -127,14 +127,31 @@ canvas#cv{width:100%;height:auto;display:block;touch-action:none;cursor:crosshai
 #dLog{margin:0;max-height:120px;overflow:auto;background:#120f26;color:#cfc8f5;border-radius:8px;padding:6px 8px;font:12px/1.35 ui-monospace,Menlo,Consolas,monospace;white-space:pre-wrap;user-select:text;-webkit-user-select:text}
 .kgh{font:800 11px var(--body);color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin:10px 0 4px}
 .kbtn.none{opacity:.55}
-.tip{position:fixed;z-index:80;max-width:320px;pointer-events:none;background:linear-gradient(160deg,rgba(52,40,110,.97),rgba(22,17,48,.97));border:2px solid var(--gold);border-radius:14px;padding:8px 12px 9px;font:700 12.5px/1.4 var(--body);color:var(--text);box-shadow:0 8px 24px rgba(0,0,0,.45),0 0 0 3px rgba(255,210,61,.12)}
+.tip{--tz:1;position:fixed;z-index:80;width:max-content;max-width:min(400px,calc(100vw - 16px));pointer-events:none;background:linear-gradient(160deg,rgba(52,40,110,.97),rgba(22,17,48,.97));border:2px solid var(--gold);border-radius:14px;padding:9px 13px 10px;font:700 12.5px/1.4 var(--body);color:var(--text);overflow-wrap:anywhere;box-shadow:0 8px 24px rgba(0,0,0,.45),0 0 0 3px rgba(255,210,61,.12)}
+/* task 31b: wider, roomier rows. #tip beats the runtime .tip rules from 08e_tips.js; --tz follows Text and menu size. */
+#tip.tip{max-width:min(400px,calc(100vw - 16px));font-size:calc(13px*var(--tz));line-height:1.5}
+body.z115 #tip.tip{--tz:1.15}body.z130 #tip.tip{--tz:1.3}
 .tip.pop{animation:tipPop .18s cubic-bezier(.3,1.6,.6,1)}
 @keyframes tipPop{from{transform:scale(.85);opacity:0}to{transform:scale(1);opacity:1}}
-.tip .th{font:800 14px/1.25 var(--display);color:var(--gold);margin-bottom:2px}
-.tip .tl{color:#d9d3ff}
-.tip .tl.tk{color:#b9b0e8;font-size:12px}
-.tip .tl b{color:#7ff0ff;font-weight:800}
-.tip kbd{display:inline-block;font:800 10.5px var(--body);color:#1a1030;background:var(--gold);border-radius:6px;padding:0 5px;margin-left:4px;vertical-align:1px;box-shadow:0 2px 0 #a07a00}
+.tip .th{font:800 calc(14.5px*var(--tz))/1.3 var(--display);color:var(--gold);margin-bottom:5px}
+.tip .th:only-child{margin-bottom:0}
+.tip .tg{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:12px;row-gap:2px;align-items:baseline}
+.tip .tg>.tl{grid-column:1/-1}
+.tip .tl{color:#d9d3ff;font-weight:600}
+.tip .tlab{color:#a9a1d8;font-weight:700;max-width:11em}
+.tip .tlab.tkw{color:#7ff0ff;font-weight:800}
+.tip .tval{color:#fff;font-weight:800}
+.tip .tsg{font-weight:900;white-space:nowrap}
+.tip .tsp{color:#5ef58f}.tip .tsn{color:#ff8080}
+.tip.tcb .tsp{color:#6cc8ff}.tip.tcb .tsn{color:#ffad33}
+.tip.thc{background:#06041a;border-color:#fff;box-shadow:0 0 0 2px #000}.tip.thc .tl,.tip.thc .tval{color:#fff}.tip.thc .tlab{color:#ece8ff}.tip.thc .tlab.tkw{color:#9ff6ff}.tip.thc .tsg{text-decoration:underline;text-underline-offset:2px}
+@media (prefers-contrast:more){.tip{background:#06041a;border-color:#fff}.tip .tl,.tip .tval{color:#fff}.tip .tlab{color:#ece8ff}}
+/* short landscape phones (and any tip still too tall, via .tcp1-3 from showTip): two label/value pairs per line */
+@media (max-height:500px){#tip.tip{max-width:min(460px,56vw,calc(100vw - 16px));line-height:1.35}body.z115 #tip.tip,body.z130 #tip.tip{--tz:1.1}.tip .tg{grid-template-columns:auto minmax(0,1fr) auto minmax(0,1fr);row-gap:1px}.tip .tg>.tl.ts{grid-column:span 2}.tip .tg>.tlw.tlab{grid-column:1}.tip .tg>.tlw.tval{grid-column:2/-1}.tip .th{margin-bottom:3px}}
+#tip.tip.tcp1{line-height:1.35}body.z115 #tip.tip.tcp1,body.z130 #tip.tip.tcp1{--tz:1.1}.tip.tcp1 .tg{grid-template-columns:auto minmax(0,1fr) auto minmax(0,1fr);row-gap:1px}.tip.tcp1 .tg>.tl.ts{grid-column:span 2}.tip.tcp1 .tg>.tlw.tlab{grid-column:1}.tip.tcp1 .tg>.tlw.tval{grid-column:2/-1}.tip.tcp1 .th{margin-bottom:3px}
+#tip.tip.tcp2{max-width:calc(100vw - 16px)}
+body #tip.tip.tcp1.tcp2.tcp3{--tz:.92;line-height:1.3}
+.tip kbd{display:inline-block;font:800 calc(10.5px*var(--tz)) var(--body);color:#1a1030;background:var(--gold);border-radius:6px;padding:0 5px;margin-left:4px;vertical-align:1px;box-shadow:0 2px 0 #a07a00}
 .tag{font:800 10px var(--body);letter-spacing:.1em;background:var(--gold);color:#3a2a00;border-radius:6px;padding:1px 5px;vertical-align:middle}
 .shoptabs{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:3px;margin-bottom:2px}
 .shoptabs button{flex:1 1 auto;font:800 11px var(--body);padding:3px 5px;border-radius:7px;border:1.5px solid var(--line);background:var(--panel2);color:var(--muted);cursor:pointer;border-bottom-color:var(--cc,var(--line))}
@@ -521,15 +538,23 @@ body.reduce *{animation-duration:.01ms!important;transition-duration:.01ms!impor
    08a_fullscreen.js fits the undistorted 960:600 canvas above the existing bar. */
 html{height:100%;overflow:hidden;scrollbar-gutter:auto}
 body{height:100vh;height:100dvh;min-height:0;overflow:hidden;padding-top:max(6px,env(safe-area-inset-top,0px));padding-bottom:max(6px,env(safe-area-inset-bottom,0px))}
-.app{height:100%;min-height:0;grid-template-rows:auto minmax(0,1fr)}
-.play,.scene-title .play{height:100%;min-height:0;max-width:none;align-items:stretch;grid-template-rows:minmax(0,1fr)}
+/* a column, not a grid: when the top row is hidden the play area still gets all of the height, so its size never feeds back from the last fit */
+.app{height:100%;min-height:0;display:flex;flex-direction:column}
+.app>.top{flex:none}
+.play,.scene-title .play{flex:1 1 0;height:auto;min-height:0;max-width:none;align-items:stretch;grid-template-rows:minmax(0,1fr)}
 .play>div:first-child{min-height:0;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
 body .stage{flex:none;width:var(--field-width,100%);max-width:100%!important;margin:0 auto}
 canvas#cv{width:100%;height:auto;aspect-ratio:1.6}
 .bar{flex:none;width:100%}
-.side{position:static;min-height:0;height:100%;max-height:100%;overflow:auto;align-content:start;grid-auto-rows:max-content;border-radius:12px;overscroll-behavior:contain;scrollbar-gutter:stable}
+/* the rail runs the full height of the map and bar; the Build card stretches to the bottom and its tower list scrolls inside it */
+.side{position:static;min-height:0;height:100%;max-height:100%;overflow:auto;display:flex;flex-direction:column;border-radius:12px;overscroll-behavior:contain;scrollbar-gutter:stable}
+.side>*{flex:none}
+.side>.bcard15{flex:1 1 auto;min-height:min(220px,100%);display:flex;flex-direction:column}
+.bcard15>*{flex:none}
+.bcard15>#shop{flex:1 1 0;min-height:96px;align-content:start}
+.bcard15.pw15>#shop{flex:none;min-height:0}.bcard15.pw15>.pcard15{flex:1 1 auto}
 .side .card{clip-path:inset(0 round 12px)}
-#shop{max-height:min(55dvh,var(--shop-space,55dvh));overflow-y:auto;overscroll-behavior:contain;border-radius:8px;scrollbar-width:thin;scrollbar-gutter:stable}
+#shop{max-height:none;overflow-y:auto;overscroll-behavior:contain;border-radius:8px;scrollbar-width:thin;scrollbar-gutter:stable}
 @media(max-width:960px) and (orientation:portrait){
  .play{grid-template-rows:auto minmax(0,1fr);gap:8px}
  .play>div:first-child{justify-content:flex-start}
@@ -573,5 +598,5 @@ canvas#cv{width:100%;height:auto;aspect-ratio:1.6}
 </div>
 <div class="dbg" id="dbg" hidden></div>
 <div class="tip" id="tip" hidden></div>
-<script src="parts/p00.js"></script><script src="parts/p01.js"></script><script src="parts/p02.js"></script><script src="parts/p03.js"></script><script src="parts/p04.js"></script><script src="parts/p05.js"></script><script src="parts/p06.js"></script><script src="parts/p07.js"></script><script src="parts/p08.js"></script><script src="parts/p09.js"></script><script src="parts/p10.js"></script><script src="parts/p11.js"></script><script src="parts/p12.js"></script><script src="parts/p13.js"></script><script src="parts/p14.js"></script><script src="parts/p15.js"></script><script src="parts/p16.js"></script><script src="parts/p17.js"></script><script src="parts/p18.js"></script><script src="parts/p19.js"></script><script src="parts/p20.js"></script><script>eval(window.__cc.join(""))</script>
+<script src="parts/p00.js"></script><script src="parts/p01.js"></script><script src="parts/p02.js"></script><script src="parts/p03.js"></script><script src="parts/p04.js"></script><script src="parts/p05.js"></script><script src="parts/p06.js"></script><script src="parts/p07.js"></script><script src="parts/p08.js"></script><script src="parts/p09.js"></script><script src="parts/p10.js"></script><script src="parts/p11.js"></script><script src="parts/p12.js"></script><script src="parts/p13.js"></script><script src="parts/p14.js"></script><script src="parts/p15.js"></script><script src="parts/p16.js"></script><script src="parts/p17.js"></script><script src="parts/p18.js"></script><script src="parts/p19.js"></script><script src="parts/p20.js"></script><script src="parts/p21.js"></script><script src="parts/p22.js"></script><script>eval(window.__cc.join(""))</script>
 <script>if('serviceWorker' in navigator&&window.isSecureContext)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(e=>console.error('Offline registration failed',e)));</script></body></html>

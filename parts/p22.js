@@ -1,0 +1,1 @@
+window.__cc=window.__cc||[];window.__cc.push("pply(this,arguments)}}\n/* own interval (see CLAUDE.md: never capture function references at setup time) */\nsetInterval(()=>{try{logTick()}catch(e){}},250);\n\n");
