@@ -14,6 +14,7 @@
   --body:'Nunito',system-ui,sans-serif;
   color-scheme:dark;
 }
+html,body{width:100%;min-height:100%;margin:0;overscroll-behavior:none}
 *{box-sizing:border-box}
 body{
   background-color:var(--ink);
@@ -22,10 +23,10 @@ body{
   padding-block:12px;
   padding-left:max(16px,env(safe-area-inset-left,0px));
   padding-right:max(16px,env(safe-area-inset-right,0px));
-  -webkit-user-select:none; user-select:none;
+  -webkit-user-select:none;user-select:none;overflow-x:hidden;
 }
 button{font:inherit;color:inherit}
-.app{max-width:1280px;margin:0 auto;display:grid;gap:12px}
+.app{max-width:none;margin:0 auto;display:grid;gap:12px}
 .top{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between}
 .brand{font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:.01em;line-height:1}
 .brand b{color:var(--gold);font-weight:800}
@@ -80,8 +81,8 @@ canvas#cv{width:100%;height:auto;display:block;touch-action:none;cursor:crosshai
 .bbrow.low{border-color:var(--coral)}
 .bbrow.low .bbtop span{color:#ffb3be}
 .bbmore{text-align:center;font:800 11px var(--display);color:#ffb3be}
-.side{display:grid;gap:12px;min-width:0}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px;min-width:0}
+.side{display:grid;gap:12px;min-width:0;overscroll-behavior:contain}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px;min-width:0;overflow:hidden;isolation:isolate}
 .card h3{font:800 12px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
 .shop{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
 .tbtn{display:grid;grid-template-columns:44px minmax(0,1fr);gap:8px;align-items:center;text-align:left;background:var(--panel2);border:2px solid var(--line);border-radius:12px;padding:5px 8px 5px 5px;cursor:pointer;min-width:0}
@@ -516,6 +517,25 @@ body.reduce *{animation-duration:.01ms!important;transition-duration:.01ms!impor
 .wr-ranks{list-style:none;padding:0;margin:10px 0;display:grid;gap:8px;counter-reset:none}.wr-rank{display:flex;align-items:center;gap:12px;padding:13px 16px;border:1px solid var(--wr-border);border-radius:12px;background:#201c3a;min-width:0}.wr-first{background:linear-gradient(100deg,#483747,#2b2541);border-color:#a4804d}.wr-you{border-color:var(--mint);box-shadow:inset 3px 0 var(--mint)}.wr-place{font:800 22px var(--display);color:var(--muted);width:34px;flex-shrink:0;font-variant-numeric:tabular-nums}.wr-first .wr-place{color:var(--gold)}.wr-rank canvas{width:38px;height:38px;background:#ffffff0b;border-radius:50%;flex-shrink:0}.wr-player{display:grid;gap:3px;min-width:0;flex:1}.wr-player strong{overflow-wrap:anywhere;font-size:14px}.wr-player small{font-size:10px;color:var(--muted)}.wr-score{font:800 21px var(--display);text-align:right;flex-shrink:0;max-width:42%;overflow-wrap:anywhere;color:var(--text);font-variant-numeric:tabular-nums}.wr-first .wr-score{color:var(--gold)}
 .wr-empty{text-align:center;padding:34px 20px;background:#18152f;border:1px dashed var(--wr-border);border-radius:14px;color:var(--muted)}.wr-empty>span{font-size:34px;color:var(--gold)}.wr-empty h2{color:var(--text);font-size:20px;margin:10px 0}.wr-empty p{max-width:390px;margin:8px auto;line-height:1.6}.wr-notice{padding:12px;background:#ffc83d15;border-radius:10px;color:var(--gold);font-size:12px}.wr-footer{border-top:1px solid var(--wr-border);margin-top:22px;padding-top:14px}.wr-footer p{font-size:11px;line-height:1.6;color:var(--muted);max-width:650px}.wr-footer #wrSync{color:var(--mint);font-weight:800}
 @media(max-width:600px){.wr-header h1{font-size:30px}.wr-trophy{font-size:48px;padding:0 6px}.wr-map-picker summary{gap:10px}.wr-map-picker summary canvas{width:82px;height:56px}.wr-map-picker summary strong{font-size:16px}.wr-map-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.wr-cats{grid-template-columns:repeat(2,minmax(0,1fr))}.wr-personal{padding:12px}.wr-personal strong{font-size:24px}.wr-personal p{font-size:10px}.wr-rank{padding:12px 9px;gap:8px}.wr-place{width:25px;font-size:18px}.wr-rank canvas{width:30px;height:30px}.wr-player strong{font-size:12px}.wr-score{font-size:17px}.wr-eyebrow{font-size:9px}}
+/* Viewport layout: bounded shell in windowed and fullscreen modes.
+   08a_fullscreen.js fits the undistorted 960:600 canvas above the existing bar. */
+html{height:100%;overflow:hidden;scrollbar-gutter:auto}
+body{height:100vh;height:100dvh;min-height:0;overflow:hidden;padding-top:max(6px,env(safe-area-inset-top,0px));padding-bottom:max(6px,env(safe-area-inset-bottom,0px))}
+.app{height:100%;min-height:0;grid-template-rows:auto minmax(0,1fr)}
+.play,.scene-title .play{height:100%;min-height:0;max-width:none;align-items:stretch;grid-template-rows:minmax(0,1fr)}
+.play>div:first-child{min-height:0;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+body .stage{flex:none;width:var(--field-width,100%);max-width:100%!important;margin:0 auto}
+canvas#cv{width:100%;height:auto;aspect-ratio:1.6}
+.bar{flex:none;width:100%}
+.side{position:static;min-height:0;height:100%;max-height:100%;overflow:auto;align-content:start;grid-auto-rows:max-content;border-radius:12px;overscroll-behavior:contain;scrollbar-gutter:stable}
+.side .card{clip-path:inset(0 round 12px)}
+#shop{max-height:min(55dvh,var(--shop-space,55dvh));overflow-y:auto;overscroll-behavior:contain;border-radius:8px;scrollbar-width:thin;scrollbar-gutter:stable}
+@media(max-width:960px) and (orientation:portrait){
+ .play{grid-template-rows:auto minmax(0,1fr);gap:8px}
+ .play>div:first-child{justify-content:flex-start}
+ .side{min-height:0;height:100%;max-height:100%}
+ .scene-title .play{grid-template-rows:minmax(0,1fr)}
+}
 </style>
 </head><body><div class="app">
   <div class="top">
@@ -553,5 +573,5 @@ body.reduce *{animation-duration:.01ms!important;transition-duration:.01ms!impor
 </div>
 <div class="dbg" id="dbg" hidden></div>
 <div class="tip" id="tip" hidden></div>
-<script src="parts/p00.js"></script><script src="parts/p01.js"></script><script src="parts/p02.js"></script><script src="parts/p03.js"></script><script src="parts/p04.js"></script><script src="parts/p05.js"></script><script src="parts/p06.js"></script><script src="parts/p07.js"></script><script src="parts/p08.js"></script><script src="parts/p09.js"></script><script src="parts/p10.js"></script><script src="parts/p11.js"></script><script src="parts/p12.js"></script><script src="parts/p13.js"></script><script src="parts/p14.js"></script><script src="parts/p15.js"></script><script src="parts/p16.js"></script><script src="parts/p17.js"></script><script>eval(window.__cc.join(""))</script>
+<script src="parts/p00.js"></script><script src="parts/p01.js"></script><script src="parts/p02.js"></script><script src="parts/p03.js"></script><script src="parts/p04.js"></script><script src="parts/p05.js"></script><script src="parts/p06.js"></script><script src="parts/p07.js"></script><script src="parts/p08.js"></script><script src="parts/p09.js"></script><script src="parts/p10.js"></script><script src="parts/p11.js"></script><script src="parts/p12.js"></script><script src="parts/p13.js"></script><script src="parts/p14.js"></script><script src="parts/p15.js"></script><script src="parts/p16.js"></script><script src="parts/p17.js"></script><script src="parts/p18.js"></script><script src="parts/p19.js"></script><script src="parts/p20.js"></script><script>eval(window.__cc.join(""))</script>
 <script>if('serviceWorker' in navigator&&window.isSecureContext)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(e=>console.error('Offline registration failed',e)));</script></body></html>
