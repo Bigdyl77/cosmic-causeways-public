@@ -1,8 +1,8 @@
 {
-  "version": "3.1.1",
-  "released": "2026-10-28T16:32:04.391Z",
+  "version": "3.3.0",
+  "released": "2026-10-28T17:42:44.407Z",
   "notes": "World records in this build use the shared server. This link stays the same for every later update.",
-  "sha256": "4fe79b1f473c639d698d4766aa1c1838374703b24693a8f62584c75360b92965",
+  "sha256": "7f1a7369e68fc38e7212c26013341f4f4ad2819e38d30dbdb0cd1de6ad9fa4d2",
   "page": "https://github.com/Bigdyl77/cosmic-causeways-public",
   "play": "https://bigdyl77.github.io/cosmic-causeways-public/",
   "downloads": {

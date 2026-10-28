@@ -37,7 +37,7 @@ button{font:inherit;color:inherit}
 .chip.evt{font-size:14px;padding:5px 12px;border-color:var(--gold);color:var(--gold)}
 .play{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:12px;align-items:start}
 .stage{position:relative;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);border:2px solid var(--line);background:#2f7a3f;line-height:0}
-canvas#cv{width:100%;height:auto;display:block;touch-action:none;cursor:crosshair}
+canvas#cv{width:100%;height:auto;display:block;touch-action:none;cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M3 2L27 18L17 20L12 29Z' fill='%23fff9df' stroke='%23100d24' stroke-width='3' stroke-linejoin='round'/%3E%3Cpath d='M6 6L23 17L16 18Z' fill='%23ffd23d'/%3E%3Cpath d='M7 9L14 20L12 25Z' fill='%237ff0ff'/%3E%3C/svg%3E") 3 2,crosshair}
 .overlay{position:absolute;inset:0;z-index:7;display:flex;align-items:flex-start;justify-content:center;background:rgba(14,10,36,.78);backdrop-filter:blur(3px);padding:14px;line-height:1.4;overflow:auto}
 .overlay[hidden]{display:none}
 .overlay>.sheet{margin:auto;width:100%;max-width:760px;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow);display:grid;gap:14px}
@@ -227,6 +227,22 @@ table.waves td small{color:var(--muted)}
 .lcard:not(.locked):hover{transform:translateY(-1px);border-color:rgba(255,255,255,.35)}
 .lslot>summary .hint{color:var(--gold);font:700 13px var(--body);text-align:right}
 #lSec{margin:2px 0 8px}#lGear,#lPowers{display:grid;gap:8px}
+/* Loadout: commander centre stage, slots around it, picker underneath */
+#lGear.lstage{grid-template-columns:minmax(0,1fr) minmax(220px,1.15fr) minmax(0,1fr);grid-template-areas:"w hero m" "p hero u" "s hero aim" "pick pick pick";gap:10px;align-items:stretch}
+.lhero{grid-area:hero;display:grid;justify-items:center;align-content:center;gap:4px;border-radius:18px;background:radial-gradient(ellipse at 50% 45%,rgba(86,194,255,.14),rgba(0,0,0,0) 70%)}
+#lHero{width:100%;max-width:300px;aspect-ratio:1;height:auto}
+.lhname{display:grid;justify-items:center;line-height:1.15}.lhname b{font:800 20px var(--display)}.lhname small{color:var(--muted);font-size:12px}
+.lstats{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}.lstats span{display:grid;justify-items:center;min-width:64px;padding:4px 8px;border-radius:10px;background:rgba(255,255,255,.05);border:1px solid var(--line)}.lstats small{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}.lstats b{font:800 15px var(--display)}
+.lslot{display:flex;flex-direction:column;gap:2px;text-align:left;min-height:44px;padding:10px 12px;border-radius:14px;border:2px solid var(--line);background:linear-gradient(160deg,var(--panel2),rgba(255,255,255,.02));color:inherit;font:inherit;cursor:pointer;position:relative}
+.lslot .lsk{display:flex;justify-content:space-between;align-items:center;gap:6px;font:800 11px var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.lslot kbd{font:800 10px var(--body);letter-spacing:0;text-transform:none;padding:1px 6px;border-radius:6px;border:1px solid var(--line);background:rgba(0,0,0,.25);color:var(--text)}
+.lslot b{font:800 17px var(--display);color:var(--gold)}.lslot small{opacity:.8;font-size:11.5px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.lslot:hover{border-color:var(--muted)}.lslot:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.lslot.open{border-color:var(--gold);box-shadow:0 0 0 3px rgba(255,200,61,.22)}
+.laim{align-self:center;display:grid;gap:6px}.laim .seg{display:flex;flex-wrap:wrap;gap:6px}.laim .seg button{font-size:13px;padding:6px 10px}
+.lpick{grid-area:pick;border-top:1px solid var(--line);padding-top:10px}.lpick h2{margin-bottom:8px}
+@media(max-width:700px){#lGear.lstage{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"hero hero" "w p" "m u" "s aim" "pick pick"}#lHero{max-width:190px}.lslot small{display:none}}
+@media(max-height:500px){#lHero{max-width:170px}}
 .loadrow{margin-top:8px}
 #mseg button.claimed::after{content:' ✓';color:#7be0a0}
 .brand.wig{animation:tipPop .25s}
@@ -268,10 +284,13 @@ table.waves td small{color:var(--muted)}
 .tlv .pname{color:var(--text);font-size:19px}
 .profmk{display:grid;grid-template-columns:240px 1fr;gap:16px;align-items:start}
 .profmk canvas{width:240px;height:240px;border-radius:18px;border:2px solid var(--line)}
+.profav{display:flex;flex-direction:column;gap:8px;min-width:0}
+.lvbig.lvmini{gap:10px;padding:8px 10px;flex-wrap:nowrap}.lvmini .lvnum{width:44px;height:44px;font-size:20px;border-width:2px}.lvmini b{font-size:15px}.lvmini span{font-size:11px}
+.proflinks{margin:0;gap:6px}.proflinks .btn{flex:1 1 0;min-height:44px;font-size:13px;padding:6px 8px}
 .profmk input{font:700 15px var(--body);background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:6px 10px;min-width:0}
 .seg button.sw{width:26px;height:26px;padding:0;border-radius:50%;border:2px solid rgba(255,255,255,.25)}
 .seg button.sw.on{border:3px solid #fff}
-@media (max-width:700px){.profmk{grid-template-columns:1fr}.profmk canvas{width:160px;height:160px;margin:auto}}
+@media (max-width:700px){.profmk{grid-template-columns:1fr}.profmk canvas{width:160px;height:160px;margin:auto}.profav{max-width:360px;width:100%;margin:auto}}
 .tlv span{font-size:12px;color:var(--muted);grid-column:2}
 .tlv .bar2{grid-column:2}
 .tgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
