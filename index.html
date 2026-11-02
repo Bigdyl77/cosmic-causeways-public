@@ -539,6 +539,22 @@ body.reduce *{animation-duration:.01ms!important;transition-duration:.01ms!impor
  body.scene-title .overlay.clear{background:transparent}
  body.scene-title .tmenu,body.scene-title .tmenu.wide3{max-width:min(620px,94vw)}
  body.scene-title .tmenu .tgrid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ /* the logo stays whole: the title map is cropped from the bottom, not the top */
+ body.scene-title #cv{object-position:50% 0}
+}
+/* Short landscape screens (phones held sideways): menus are drawn at the desktop size and shrunk to fit
+   (--mz, set by phoneMenuZoom in 07n), as centred windows like on desktop instead of full-width bottom sheets.
+   Larger text still multiplies on top. */
+@media (max-height:520px) and (orientation:landscape){
+ #overlay:not(.clear){align-items:center;padding:6px}
+ #overlay:not(.clear)>.sheet{zoom:var(--mz,1);margin:auto;max-width:760px;border-radius:18px}
+ #overlay:not(.clear)>.sheet.wide{max-width:none}
+ #overlay:not(.clear)>.sheet::before{display:none}
+ body.z115 #overlay:not(.clear)>.sheet{zoom:calc(var(--mz,1) * 1.15)}
+ body.z130 #overlay:not(.clear)>.sheet{zoom:calc(var(--mz,1) * 1.3)}
+ body.scene-title .tmenu{zoom:var(--mz,1)}
+ body.z115.scene-title .tmenu{zoom:calc(var(--mz,1) * 1.15)}
+ body.z130.scene-title .tmenu{zoom:calc(var(--mz,1) * 1.3)}
 }
 /* World records: local styles keep the rest of the game's menus unchanged. */
 .wr{max-width:920px;margin:auto;--wr-border:rgba(var(--muted-rgb),.22)}
@@ -624,5 +640,5 @@ canvas#cv{width:100%;height:auto;aspect-ratio:1.6}
 </div>
 <div class="dbg" id="dbg" hidden></div>
 <div class="tip" id="tip" hidden></div>
-<script src="parts/p00.js"></script><script src="parts/p01.js"></script><script src="parts/p02.js"></script><script src="parts/p03.js"></script><script src="parts/p04.js"></script><script src="parts/p05.js"></script><script src="parts/p06.js"></script><script src="parts/p07.js"></script><script src="parts/p08.js"></script><script src="parts/p09.js"></script><script src="parts/p10.js"></script><script src="parts/p11.js"></script><script src="parts/p12.js"></script><script src="parts/p13.js"></script><script src="parts/p14.js"></script><script src="parts/p15.js"></script><script src="parts/p16.js"></script><script src="parts/p17.js"></script><script src="parts/p18.js"></script><script src="parts/p19.js"></script><script src="parts/p20.js"></script><script src="parts/p21.js"></script><script src="parts/p22.js"></script><script src="parts/p23.js"></script><script>eval(window.__cc.join(""))</script>
+<script src="parts/p00.js"></script><script src="parts/p01.js"></script><script src="parts/p02.js"></script><script src="parts/p03.js"></script><script src="parts/p04.js"></script><script src="parts/p05.js"></script><script src="parts/p06.js"></script><script src="parts/p07.js"></script><script src="parts/p08.js"></script><script src="parts/p09.js"></script><script src="parts/p10.js"></script><script src="parts/p11.js"></script><script src="parts/p12.js"></script><script src="parts/p13.js"></script><script src="parts/p14.js"></script><script src="parts/p15.js"></script><script src="parts/p16.js"></script><script src="parts/p17.js"></script><script src="parts/p18.js"></script><script src="parts/p19.js"></script><script src="parts/p20.js"></script><script src="parts/p21.js"></script><script src="parts/p22.js"></script><script src="parts/p23.js"></script><script src="parts/p24.js"></script><script>eval(window.__cc.join(""))</script>
 <script>if('serviceWorker' in navigator&&window.isSecureContext)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(e=>console.error('Offline registration failed',e)));</script></body></html>
