@@ -606,6 +606,12 @@ canvas#cv{width:100%;height:auto;aspect-ratio:1.6}
 .bcard15.pw15>#shop{flex:none;min-height:0}.bcard15.pw15>.pcard15{flex:1 1 auto}
 .side .card{clip-path:inset(0 round 12px)}
 #shop{border-radius:8px}
+@media(min-width:961px) and (min-height:521px){
+ body:not(.scene-title) .play{column-gap:0}
+ body:not(.scene-title) .play>div:first-child{align-items:flex-start;justify-content:flex-start}
+ body:not(.scene-title) .stage{margin:0}
+ body:not(.scene-title) .play>div:first-child>.bar{width:var(--field-width,100%);max-width:100%}
+}
 @media(max-width:960px) and (orientation:portrait){
  .play{grid-template-rows:auto minmax(0,1fr);gap:8px}
  .play>div:first-child{justify-content:flex-start}
