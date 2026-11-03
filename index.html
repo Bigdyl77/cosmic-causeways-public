@@ -110,6 +110,27 @@ canvas#cv{width:100%;height:auto;display:block;touch-action:none;cursor:url("dat
 .upb{grid-row:2/5;grid-column:2;align-self:center;background:var(--gold);color:#3a2a00;border:0;border-radius:10px;font:800 15px var(--body);padding:6px 12px;cursor:pointer}
 .upb kbd{display:block;font:700 10px var(--body);opacity:.7}
 .upb[disabled]{background:var(--line);color:var(--muted);cursor:default}
+.absorb-panel{display:flex;flex-direction:column;gap:10px;margin-top:10px;padding:10px;background:var(--panel2);border:1px solid var(--gold);border-radius:10px;min-width:0;overflow-wrap:anywhere}
+.absorb-panel h5{margin:0;font:800 17px/1.25 var(--body);color:var(--gold)}
+.absorb-panel p,.absorb-panel li,.absorb-panel summary{margin:0;font:600 13px/1.45 var(--body);color:var(--muted)}
+.absorb-panel b{color:var(--text)}
+.absorb-list{display:flex;flex-direction:column;gap:6px;min-width:0}
+.absorb-choice{display:flex;align-items:center;gap:8px;width:100%;min-width:0;min-height:54px;padding:8px;text-align:left;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:8px;cursor:pointer;font:600 13px/1.4 var(--body)}
+.absorb-number{flex:none;display:grid;place-items:center;width:24px;height:24px;border:1px solid var(--gold);border-radius:50%;color:var(--gold)}
+.absorb-description{flex:1;min-width:0;white-space:normal;overflow-wrap:anywhere}
+.absorb-description b,.absorb-description small{display:block}
+.absorb-description small{font-size:12px;color:var(--muted)}
+.absorb-levels{display:inline-block;white-space:nowrap}
+.absorb-check{flex:none;font-size:20px;color:var(--gold)}
+.absorb-choice[aria-pressed="true"]{border-color:var(--gold);background:var(--sel)}
+.absorb-choice:disabled{opacity:.55;cursor:default}
+.absorb-panel button:focus-visible,.absorb-panel summary:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.absorb-actions{display:flex;flex-direction:column;gap:8px;min-width:0;border-top:1px solid var(--line);padding-top:10px}
+.absorb-actions .btn{width:100%;min-width:0;min-height:44px;white-space:normal;overflow-wrap:anywhere}
+.absorb-empty{padding:8px;border:1px dashed var(--line);border-radius:8px}
+.absorb-inside{border-top:1px solid var(--line);padding-top:8px;min-width:0}
+.absorb-inside summary{cursor:pointer;color:var(--text)}
+.absorb-inside ul{margin:8px 0;padding-left:18px}
 .pips{display:flex;gap:4px;grid-column:1/2}
 .pips i{width:22px;height:7px;border-radius:4px;background:var(--track)}
 .pips i.f{background:var(--pc,var(--sky))}
