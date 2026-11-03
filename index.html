@@ -607,7 +607,8 @@ canvas#cv{width:100%;height:auto;aspect-ratio:1.6}
 .side .card{clip-path:inset(0 round 12px)}
 #shop{border-radius:8px}
 @media(min-width:961px) and (min-height:521px){
- body:not(.scene-title) .play{column-gap:0}
+ body:not(.scene-title){padding-top:max(8px,env(safe-area-inset-top,0px));padding-bottom:max(8px,env(safe-area-inset-bottom,0px))}
+ body:not(.scene-title) .play{column-gap:8px}
  body:not(.scene-title) .play>div:first-child{align-items:flex-start;justify-content:flex-start}
  body:not(.scene-title) .stage{margin:0}
  body:not(.scene-title) .play>div:first-child>.bar{width:var(--field-width,100%);max-width:100%}
